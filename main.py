@@ -12,11 +12,11 @@ current_sort = bubble_sort  # default sort
 
 
 clock = pygame.time.Clock()
-speed = 60
+settings = {"speed": 60}
 
 run = True
 while run:
-    clock.tick(speed)
+    clock.tick(settings["speed"])
 
     if sorting:
         try:
@@ -54,11 +54,20 @@ while run:
             elif event.key == pygame.K_SPACE and not sorting:
                 if current_sort:
                     print("▶️ Sorting started...")
-                    sort_generator = current_sort(lst, draw_list, speed)
+                    sort_generator = current_sort(lst, draw_list, settings)
                     sorting = True
 
             elif event.key == pygame.K_p and not sorting:
                 print("⚡ Launching preview mode...")
                 run_preview_mode()
+
+            elif event.key == pygame.K_PLUS or event.key == pygame.K_EQUALS:
+                settings["speed"] = min(240, settings["speed"] + 10)
+                print(f"⏩ Increased speed to {settings['speed']}")
+
+            elif event.key == pygame.K_MINUS:
+                settings["speed"] = max(10, settings["speed"] - 10)
+                print(f"⏪ Decreased speed to {settings['speed']}")
+
 
 pygame.quit()

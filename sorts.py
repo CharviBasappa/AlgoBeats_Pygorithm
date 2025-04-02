@@ -2,7 +2,7 @@ import winsound
 import pygame
 from visualizer import draw_list
 
-def bubble_sort(lst, draw_callback, speed=60):
+def bubble_sort(lst, draw_callback, settings):
     for i in range(len(lst) - 1):
         for j in range(len(lst) - 1 - i):
             if lst[j] > lst[j + 1]:
@@ -16,10 +16,10 @@ def bubble_sort(lst, draw_callback, speed=60):
 
                 # Visual update
                 draw_callback(lst, {j: (0, 255, 0), j + 1: (255, 100, 100)})
-                pygame.time.wait(1000 // speed)
+                pygame.time.wait(1000 // settings["speed"])
                 yield True
 
-def insertion_sort(lst, draw_callback, speed=60):
+def insertion_sort(lst, draw_callback, settings):
     for i in range(1, len(lst)):
         current = lst[i]
         j = i
@@ -36,11 +36,11 @@ def insertion_sort(lst, draw_callback, speed=60):
 
             # Visual
             draw_callback(lst, {j: (0, 255, 0), j + 1: (255, 100, 100)})
-            pygame.time.wait(1000 // speed)
+            pygame.time.wait(1000 // settings["speed"])
             yield True
 
 
-def selection_sort(lst, draw_callback, speed=60):
+def selection_sort(lst, draw_callback, settings):
     for i in range(len(lst)):
         min_idx = i
         for j in range(i + 1, len(lst)):
@@ -55,5 +55,5 @@ def selection_sort(lst, draw_callback, speed=60):
             pass
 
         draw_callback(lst, {i: (0, 255, 0), min_idx: (255, 100, 100)})
-        pygame.time.wait(1000 // speed)
+        pygame.time.wait(1000 // settings["speed"])
         yield True
