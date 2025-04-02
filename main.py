@@ -44,6 +44,12 @@ while run:
                 print("🔁 Selection Sort selected. Press SPACE to start.")
                 current_sort = selection_sort
 
+            elif event.key == pygame.K_r:
+                print("🔄 List reset to new random values.")
+                lst = generate_list()
+                sorting = False
+                sort_generator = None
+                current_sort = bubble_sort
 
             elif event.key == pygame.K_SPACE and not sorting:
                 if current_sort:
