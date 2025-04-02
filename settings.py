@@ -6,4 +6,4 @@ BG_COLOR = (0, 0, 0)
 
 pygame.init()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Sorting Visualizer")
+pygame.display.set_caption("Sorting Algorithm Visualizer")

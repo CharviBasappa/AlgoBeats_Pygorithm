@@ -1,7 +1,7 @@
 import pygame
 from settings import WIN
 from data import generate_list
-from visualizer import draw_list
+from visualizer import draw_list, draw_text_info
 from sorts import bubble_sort, insertion_sort, selection_sort
 from visualsort import run_preview_mode
 
@@ -26,6 +26,7 @@ while run:
 
     else:
         draw_list(lst)
+        draw_text_info(current_sort.__name__.replace("_sort", "").upper(), settings)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
