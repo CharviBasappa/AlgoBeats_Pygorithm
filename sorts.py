@@ -38,3 +38,22 @@ def insertion_sort(lst, draw_callback, speed=60):
             draw_callback(lst, {j: (0, 255, 0), j + 1: (255, 100, 100)})
             pygame.time.wait(1000 // speed)
             yield True
+
+
+def selection_sort(lst, draw_callback, speed=60):
+    for i in range(len(lst)):
+        min_idx = i
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[min_idx]:
+                min_idx = j
+
+        lst[i], lst[min_idx] = lst[min_idx], lst[i]
+
+        try:
+            winsound.Beep(100 + lst[i]*10, 20)
+        except:
+            pass
+
+        draw_callback(lst, {i: (0, 255, 0), min_idx: (255, 100, 100)})
+        pygame.time.wait(1000 // speed)
+        yield True

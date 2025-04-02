@@ -2,7 +2,7 @@ import pygame
 from settings import WIN
 from data import generate_list
 from visualizer import draw_list
-from sorts import bubble_sort, insertion_sort
+from sorts import bubble_sort, insertion_sort, selection_sort
 from visualsort import run_preview_mode
 
 lst = generate_list()
@@ -40,10 +40,19 @@ while run:
                 print("🔁 Insertion Sort selected. Press SPACE to start.")
                 current_sort = insertion_sort
 
+            elif event.key == pygame.K_s and not sorting:
+                print("🔁 Selection Sort selected. Press SPACE to start.")
+                current_sort = selection_sort
+
+
             elif event.key == pygame.K_SPACE and not sorting:
                 if current_sort:
                     print("▶️ Sorting started...")
                     sort_generator = current_sort(lst, draw_list, speed)
                     sorting = True
+
+            elif event.key == pygame.K_p and not sorting:
+                print("⚡ Launching preview mode...")
+                run_preview_mode()
 
 pygame.quit()
