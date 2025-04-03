@@ -9,7 +9,6 @@ lst = generate_list()
 sorting = False
 sort_generator = None
 
-# Track current sort + label
 current_sort = bubble_sort
 current_algo_name = "BUBBLE SORT"
 ascending = True
@@ -21,7 +20,6 @@ run = True
 while run:
     clock.tick(settings["speed"])
 
-    # Draw current state every frame
     draw_list(lst)
     direction = "ASC" if ascending else "DESC"
     draw_text_info(f"{current_algo_name} - {direction}", settings)
@@ -39,7 +37,6 @@ while run:
 
         if event.type == pygame.KEYDOWN:
 
-            # Sort selection keys
             if event.key == pygame.K_b and not sorting:
                 current_sort = bubble_sort
                 current_algo_name = "BUBBLE SORT"
@@ -52,14 +49,12 @@ while run:
                 current_sort = selection_sort
                 current_algo_name = "SELECTION SORT"
 
-            # Direction keys
             elif event.key == pygame.K_a:
                 ascending = True
 
             elif event.key == pygame.K_d:
                 ascending = False
 
-            # Reset list
             elif event.key == pygame.K_r:
                 lst = generate_list()
                 sorting = False
@@ -68,16 +63,13 @@ while run:
                 current_algo_name = "BUBBLE SORT"
                 ascending = True
 
-            # Start sorting
             elif event.key == pygame.K_SPACE and not sorting:
                 sort_generator = current_sort(lst, draw_list, settings, ascending)
                 sorting = True
 
-            # Preview mode (custom feature)
             elif event.key == pygame.K_p and not sorting:
                 run_preview_mode()
 
-            # Speed controls
             elif event.key == pygame.K_PLUS or event.key == pygame.K_EQUALS:
                 settings["speed"] = min(240, settings["speed"] + 10)
 
