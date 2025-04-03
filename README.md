@@ -1,8 +1,4 @@
 # 🔢 Sorting Algorithms Visualizer – AlgoBeats
-![Python](https://img.shields.io/badge/Python-3.9-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Pygame](https://img.shields.io/badge/Pygame-2.5-green)
-
 
 A visually rich Python application using **Pygame** to animate and compare popular sorting algorithms with sound, themes, and interaction.
 
@@ -153,3 +149,7 @@ If you’d like to contribute to **AlgoBeats**, feel free to:
 ## ⭐ Show Some Love
 
 If you found this project useful, please ⭐ star the repository on GitHub! ❤️
+
+---
+
+📄 Licensed under the [MIT License](https://opensource.org/licenses/MIT) © 2025 Charvi Basappa
