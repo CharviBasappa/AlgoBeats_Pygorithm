@@ -32,14 +32,39 @@ python main.py
 
 ### Sorting Algorithm Summaries
 1. Bubble Sort
-   Repeatedly compares adjacent items and swaps them if out of order.
+   - Start from the first element in the list.
+   - Compare each pair of adjacent elements (arr[i] and arr[i+1]).
+   - If the left element is greater, swap them (to move the larger one right).
+   - After the first full pass, the largest element "bubbles" to the end.
+   - Repeat the process for the remaining unsorted part of the list.
+   - Continue until no swaps are needed — the list is now sorted.
 2. Insertion Sort
-   Builds a sorted portion by inserting one element at a time in the correct position.
+   - Assume the first element is already sorted.
+   - Take the next element (key) and compare it with elements in the sorted section (to its left).
+   - Shift elements to the right until you find the correct position for key.
+   - Insert the key at that position.
+   - Repeat this for all elements until the entire list is sorted.
 3. Selection Sort
-   Repeatedly selects the smallest/largest from unsorted part and swaps.
+   - Start with the full list as the unsorted portion.
+   - Find the smallest element in the unsorted portion.
+   - Swap it with the first unsorted element.
+   - Move the boundary of the sorted section one step right.
+   - Repeat until the list is fully sorted.
 4. Merge Sort
-   Divide and conquer algorithm: splits list, recursively sorts, then merges.
+   - Divide the list into two halves recursively until each sublist has one element.
+   - Merge the sublists back together in sorted order.
+   - While merging, compare the smallest available elements from both halves.
+   - Place the smaller element into the merged list, then continue.
+   - Final result is a fully sorted merged list.
 5. Quick Sort
-   Picks a pivot, partitions into less/greater lists, then sorts recursively.
+   - Choose a pivot element (commonly the last, first, or middle).
+   - Partition the list: move smaller elements left of pivot, larger to the right.
+   - Recursively apply the same process to left and right sublists.
+   - Do not include the pivot in the recursive calls (it’s already in place).
+   - Continue until all sublists are sorted.
 6. Heap Sort
-   Builds a heap (binary tree), repeatedly extracts max/min.
+   - Build a max-heap from the unsorted list (largest element at root).
+   - Swap the root with the last element and reduce heap size.
+   - Heapify the root again to maintain max-heap property.
+   - Repeat until all elements have been moved to the end in sorted order.
+   - Result: sorted list in ascending order.
