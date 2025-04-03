@@ -16,7 +16,7 @@ def draw_list(lst, color_positions=None):
         pygame.draw.rect(WIN, color, (i * width, HEIGHT - val * 5, width - 2, val * 5))
 
 
-def draw_text_info(algorithm_name, settings):
+def draw_text_info(algorithm_name, settings, sort_duration=None):
     font = pygame.font.SysFont('consolas', 20)
 
     title = font.render(algorithm_name, True, (255, 255, 255))
@@ -33,3 +33,8 @@ def draw_text_info(algorithm_name, settings):
         True, (180, 180, 180)
     )
     WIN.blit(controls2, ((WIDTH - controls2.get_width()) // 2, 60))
+
+    if sort_duration is not None:
+        duration_font = pygame.font.SysFont('consolas', 18)
+        timer_text = duration_font.render(f"Sorting completed in {sort_duration:.2f} seconds", True, (255, 255, 255))
+        WIN.blit(timer_text, ((WIDTH - timer_text.get_width()) // 2, 85))
