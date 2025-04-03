@@ -1,6 +1,6 @@
 import pygame
 
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 1000, 650
 BAR_COLOR = (100, 200, 255)
 BG_COLOR = (0, 0, 0)
 
