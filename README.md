@@ -23,6 +23,40 @@ A visually rich Python application using **Pygame** to animate and compare popul
 
 ---
 
+## 🎮 Controls
+
+| Key          | Action                          |
+|--------------|----------------------------------|
+| SPACE      | Start sorting                    |
+| R          | Reset list                       |
+| O          | Replay last unsorted list        |
+| A / D    | Ascending / Descending order     |
+| T          | Toggle themes                    |
+| + / -    | Speed up / slow down             |
+| B          | Bubble Sort                      |
+| I          | Insertion Sort                   |
+| S          | Selection Sort                   |
+| Q          | Quick Sort                       |
+| M          | Merge Sort                       |
+| H          | Heap Sort                        |
+
+---
+
+## 📁 Project Structure
+
+plaintext
+AlgoBeats/                   # Root project folder for the visualizer
+│
+│── main.py                  # Main Pygame loop, input handling, and sorting control
+│── sorts.py                 # All sorting algorithm implementations (as generators)
+│── visualizer.py            # Drawing functions: bars, text, themes, timer, etc.
+│── settings.py              # Global settings: screen size, themes, color gradients
+│── data.py                  # Generates random data for sorting
+│── visualsort.py            # (Optional) Preview or test mode logic
+│── README.md                # Full project documentati
+
+---
+
 ## 🚀 How to Run
 
 ```bash
@@ -30,7 +64,25 @@ pip install pygame
 python main.py
 ```
 
-### Sorting Algorithm Summaries
+---
+
+## 🎨 UI Preview
+Here’s how the Visualizer looks:
+
+### Intro View
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/Intro.png?raw=true" width="600"/>
+
+### Selection Sort with Theme (ASC)
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_ASC.png?raw=true" width="600"/>
+
+### Selection Sort with Theme (DESC)
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_DESC.png?raw=true" width="600"/>
+
+
+---
+
+## 📚 Sorting Algorithm Summaries
+
 1. Bubble Sort
    - Start from the first element in the list.
    - Compare each pair of adjacent elements (arr[i] and arr[i+1]).
