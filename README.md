@@ -44,7 +44,7 @@ A visually rich Python application using **Pygame** to animate and compare popul
 
 ## 📁 Project Structure
 
-plaintext
+```plaintext
 AlgoBeats/                   # Root project folder for the visualizer
 │
 │── main.py                  # Main Pygame loop, input handling, and sorting control
@@ -54,6 +54,7 @@ AlgoBeats/                   # Root project folder for the visualizer
 │── data.py                  # Generates random data for sorting
 │── visualsort.py            # (Optional) Preview or test mode logic
 │── README.md                # Full project documentati
+```
 
 ---
 
@@ -67,16 +68,17 @@ python main.py
 ---
 
 ## 🎨 UI Preview
+
 Here’s how the Visualizer looks:
 
 ### Intro View
-<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/Intro.png?raw=true" width="600"/>
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/Intro.png?raw=true" width="400"/>
 
 ### Selection Sort with Theme (ASC)
-<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_ASC.png?raw=true" width="600"/>
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_ASC.png?raw=true" width="400"/>
 
 ### Selection Sort with Theme (DESC)
-<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_DESC.png?raw=true" width="600"/>
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_DESC.png?raw=true" width="400"/>
 
 
 ---
