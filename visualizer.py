@@ -1,19 +1,20 @@
 import pygame
-# from settings import WIN, WIDTH, HEIGHT, BAR_COLOR, BG_COLOR
-from settings import WIN, WIDTH, HEIGHT, BAR_GRADIENTS, BG_COLOR
+from settings import WIN, WIDTH, HEIGHT, CURRENT_THEME
 
 def draw_list(lst, color_positions=None):
+    from settings import CURRENT_THEME
+
     if color_positions is None:
         color_positions = {}
 
-    WIN.fill(BG_COLOR)
+    WIN.fill(CURRENT_THEME["BACKGROUND_COLOR"])
     width = WIDTH // len(lst)
+    gradients = CURRENT_THEME["BAR_GRADIENTS"]
 
     for i, val in enumerate(lst):
-        # color = color_positions.get(i, BAR_COLOR)
-        color = color_positions.get(i, BAR_GRADIENTS[i % len(BAR_GRADIENTS)])
+        color = color_positions.get(i, gradients[i % len(gradients)])
         pygame.draw.rect(WIN, color, (i * width, HEIGHT - val * 5, width - 2, val * 5))
-    pass
+
 
 def draw_text_info(algorithm_name, settings):
     font = pygame.font.SysFont('consolas', 20)

@@ -4,6 +4,7 @@ from data import generate_list
 from visualizer import draw_list, draw_text_info
 from sorts import bubble_sort, insertion_sort, selection_sort, quick_sort, merge_sort, heap_sort
 from visualsort import run_preview_mode
+import settings
 
 lst = generate_list()
 sorting = False
@@ -14,15 +15,15 @@ current_algo_name = "BUBBLE SORT"
 ascending = True
 
 clock = pygame.time.Clock()
-settings = {"speed": 60}
+visual_settings = {"speed": 60}
 
 run = True
 while run:
-    clock.tick(settings["speed"])
+    clock.tick(visual_settings["speed"])
 
     draw_list(lst)
     direction = "ASC" if ascending else "DESC"
-    draw_text_info(f"{current_algo_name} - {direction}", settings)
+    draw_text_info(f"{current_algo_name} - {direction}", visual_settings )
     pygame.display.update()
 
     if sorting:
@@ -61,6 +62,11 @@ while run:
                 current_sort = heap_sort
                 current_algo_name = "HEAP SORT"
 
+            elif event.key == pygame.K_t:
+                settings.THEME_INDEX = (settings.THEME_INDEX + 1) % len(settings.THEMES)
+                settings.CURRENT_THEME = settings.THEMES[settings.THEME_INDEX]
+
+
             elif event.key == pygame.K_a:
                 ascending = True
 
@@ -76,16 +82,16 @@ while run:
                 ascending = True
 
             elif event.key == pygame.K_SPACE and not sorting:
-                sort_generator = current_sort(lst, draw_list, settings, ascending)
+                sort_generator = current_sort(lst, draw_list, visual_settings , ascending)
                 sorting = True
 
             elif event.key == pygame.K_p and not sorting:
                 run_preview_mode()
 
             elif event.key == pygame.K_PLUS or event.key == pygame.K_EQUALS:
-                settings["speed"] = min(240, settings["speed"] + 10)
+                visual_settings ["speed"] = min(240, visual_settings ["speed"] + 10)
 
             elif event.key == pygame.K_MINUS:
-                settings["speed"] = max(10, settings["speed"] - 10)
+                visual_settings ["speed"] = max(10, visual_settings ["speed"] - 10)
 
 pygame.quit()
