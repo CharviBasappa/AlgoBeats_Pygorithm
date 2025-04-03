@@ -22,13 +22,13 @@ def draw_text_info(algorithm_name, settings):
     WIN.blit(title, ((WIDTH - title.get_width()) // 2, 10))
 
     controls1 = font.render(
-        "R - Reset   |   SPACE - Start   |   + / - Speed   |   P - Preview Mode",
+        "R - Reset | A - Asc | D - Desc | SPACE - Start | T - Theme | + / - Speed ",
         True, (180, 180, 180)
     )
     WIN.blit(controls1, ((WIDTH - controls1.get_width()) // 2, 35))
 
     controls2 = font.render(
-        "B - Bubble   |   I - Insertion   |   S - Selection   |   A - Asc   |   D - Desc",
+        "I - Insertion | B - Bubble | S - Selection | Q - Quick ",
         True, (180, 180, 180)
     )
     WIN.blit(controls2, ((WIDTH - controls2.get_width()) // 2, 60))

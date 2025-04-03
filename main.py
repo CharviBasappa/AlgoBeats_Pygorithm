@@ -2,7 +2,7 @@ import pygame
 from settings import WIN
 from data import generate_list
 from visualizer import draw_list, draw_text_info
-from sorts import bubble_sort, insertion_sort, selection_sort
+from sorts import bubble_sort, insertion_sort, selection_sort, quick_sort
 from visualsort import run_preview_mode
 
 lst = generate_list()
@@ -48,6 +48,11 @@ while run:
             elif event.key == pygame.K_s and not sorting:
                 current_sort = selection_sort
                 current_algo_name = "SELECTION SORT"
+            
+            elif event.key == pygame.K_q and not sorting:
+                current_sort = quick_sort
+                current_algo_name = "QUICK SORT"
+
 
             elif event.key == pygame.K_a:
                 ascending = True
