@@ -31,7 +31,7 @@ THEMES = [
 THEME_INDEX = 0
 CURRENT_THEME = THEMES[THEME_INDEX]
 
-WIDTH, HEIGHT = 1000, 650
+WIDTH, HEIGHT = 1200, 700
 pygame.init()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sorting Algorithm Visualizer")
