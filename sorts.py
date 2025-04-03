@@ -132,3 +132,52 @@ def merge_sort(lst, draw_callback, settings, ascending=True):
 
     yield from merge_sort_recursive(0, len(lst) - 1)
 
+
+def heap_sort(lst, draw_callback, settings, ascending=True):
+    n = len(lst)
+
+    def heapify(n, i):
+        largest_or_smallest = i
+        left = 2 * i + 1
+        right = 2 * i + 2
+
+        # For ascending, build max-heap; for descending, build min-heap
+        if left < n and ((lst[left] > lst[largest_or_smallest] and ascending) or (lst[left] < lst[largest_or_smallest] and not ascending)):
+            largest_or_smallest = left
+
+        if right < n and ((lst[right] > lst[largest_or_smallest] and ascending) or (lst[right] < lst[largest_or_smallest] and not ascending)):
+            largest_or_smallest = right
+
+        if largest_or_smallest != i:
+            lst[i], lst[largest_or_smallest] = lst[largest_or_smallest], lst[i]
+
+            try:
+                winsound.Beep(100 + lst[i]*10, 20)
+            except:
+                pass
+
+            draw_callback(lst, {i: (0, 255, 0), largest_or_smallest: (255, 100, 100)})
+            pygame.time.wait(1000 // settings["speed"])
+            yield True
+
+            yield from heapify(n, largest_or_smallest)
+
+    # Build heap
+    for i in range(n // 2 - 1, -1, -1):
+        yield from heapify(n, i)
+
+    # Extract elements
+    for i in range(n - 1, 0, -1):
+        lst[i], lst[0] = lst[0], lst[i]
+
+        try:
+            winsound.Beep(100 + lst[i]*10, 20)
+        except:
+            pass
+
+        draw_callback(lst, {i: (0, 255, 0), 0: (255, 100, 100)})
+        pygame.time.wait(1000 // settings["speed"])
+        yield True
+
+        yield from heapify(i, 0)
+

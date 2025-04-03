@@ -28,7 +28,7 @@ def draw_text_info(algorithm_name, settings):
     WIN.blit(controls1, ((WIDTH - controls1.get_width()) // 2, 35))
 
     controls2 = font.render(
-        "I - Insertion | B - Bubble | S - Selection | Q - Quick | M - Merge",
+        "I - Insertion | B - Bubble | S - Selection | Q - Quick | M - Merge | H - Heap",
         True, (180, 180, 180)
     )
     WIN.blit(controls2, ((WIDTH - controls2.get_width()) // 2, 60))
