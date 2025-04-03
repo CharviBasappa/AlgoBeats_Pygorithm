@@ -1,4 +1,8 @@
 # 🔢 Sorting Algorithms Visualizer – AlgoBeats
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Pygame](https://img.shields.io/badge/Pygame-2.5-green)
+
 
 A visually rich Python application using **Pygame** to animate and compare popular sorting algorithms with sound, themes, and interaction.
 
@@ -72,13 +76,13 @@ python main.py
 Here’s how the Visualizer looks:
 
 ### Intro View
-<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/Intro.png?raw=true" width="400"/>
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/Intro.png?raw=true" width="600"/>
 
 ### Selection Sort with Theme (ASC)
-<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_ASC.png?raw=true" width="400"/>
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_ASC.png?raw=true" width="600"/>
 
 ### Selection Sort with Theme (DESC)
-<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_DESC.png?raw=true" width="400"/>
+<img src="https://github.com/CharviBasappa/AlgoBeats_Pygorithm/blob/main/screenshots/SelectionSort_Theme_DESC.png?raw=true" width="600"/>
 
 
 ---
@@ -122,3 +126,30 @@ Here’s how the Visualizer looks:
    - Heapify the root again to maintain max-heap property.
    - Repeat until all elements have been moved to the end in sorted order.
    - Result: sorted list in ascending order.
+  
+---
+
+## 👤 Author
+
+Made with 💙 by [Charvi Basappa](https://github.com/CharviBasappa)
+
+If you liked this project, feel free to ⭐ the repo and share it!
+
+---
+
+## 🤝 Contributions
+
+If you’d like to contribute to **AlgoBeats**, feel free to:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-name`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add some feature'`)
+5. Push to the branch (`git push origin feature-name`)
+6. Open a pull request
+
+---
+
+## ⭐ Show Some Love
+
+If you found this project useful, please ⭐ star the repository on GitHub! ❤️
