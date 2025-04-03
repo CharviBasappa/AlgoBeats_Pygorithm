@@ -21,7 +21,7 @@ THEMES = [
         "BAR_GRADIENTS": [(186, 85, 211), (148, 0, 211), (75, 0, 130)]  # 💜 Violet Dreams
     },
     {
-        "BACKGROUND_COLOR": (240, 240, 240),
+        "BACKGROUND_COLOR": (90, 50, 15),
         "BAR_GRADIENTS": [(100, 149, 237), (72, 61, 139), (106, 90, 205)]  # 🌤 Cool Twilight
     },
 ]

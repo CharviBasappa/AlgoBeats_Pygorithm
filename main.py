@@ -9,6 +9,7 @@ from visualsort import run_preview_mode
 
 lst = generate_list()
 original_lst = lst.copy()
+
 sorting = False
 sort_generator = None
 
@@ -27,8 +28,14 @@ while run:
     clock.tick(visual_settings["speed"])
 
     draw_list(lst)
-    direction = "ASC" if ascending else "DESC"
-    draw_text_info(f"{current_algo_name} - {direction}", visual_settings, sort_duration)
+    # Live timer vs completed timer
+    if sorting and sort_start_time:
+        current_time = time.time() - sort_start_time
+        draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", current_time)
+    else:
+        draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", sort_duration)
+
+    
     pygame.display.update()
 
     if sorting:
@@ -55,7 +62,7 @@ while run:
             elif event.key == pygame.K_s and not sorting:
                 current_sort = selection_sort
                 current_algo_name = "SELECTION SORT"
-            
+
             elif event.key == pygame.K_q and not sorting:
                 current_sort = quick_sort
                 current_algo_name = "QUICK SORT"
@@ -67,12 +74,6 @@ while run:
             elif event.key == pygame.K_h and not sorting:
                 current_sort = heap_sort
                 current_algo_name = "HEAP SORT"
-
-            elif event.key == pygame.K_o and not sorting:
-                lst = original_lst.copy()
-                sorting = False
-                sort_generator = None
-                sort_duration = None
 
             elif event.key == pygame.K_t:
                 settings.THEME_INDEX = (settings.THEME_INDEX + 1) % len(settings.THEMES)
@@ -92,6 +93,12 @@ while run:
                 current_sort = bubble_sort
                 current_algo_name = "BUBBLE SORT"
                 ascending = True
+                sort_duration = None
+
+            elif event.key == pygame.K_o and not sorting:
+                lst = original_lst.copy()
+                sorting = False
+                sort_generator = None
                 sort_duration = None
 
             elif event.key == pygame.K_SPACE and not sorting:
