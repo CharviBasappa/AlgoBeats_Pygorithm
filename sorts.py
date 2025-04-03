@@ -90,3 +90,45 @@ def quick_sort(lst, draw_callback, settings, ascending=True):
 
     yield from quick_sort_recursive(0, len(lst) - 1)
 
+
+def merge_sort(lst, draw_callback, settings, ascending=True):
+    def merge(left, mid, right):
+        merged = []
+        i, j = left, mid + 1
+
+        while i <= mid and j <= right:
+            if (lst[i] <= lst[j] and ascending) or (lst[i] >= lst[j] and not ascending):
+                merged.append(lst[i])
+                i += 1
+            else:
+                merged.append(lst[j])
+                j += 1
+
+        while i <= mid:
+            merged.append(lst[i])
+            i += 1
+        while j <= right:
+            merged.append(lst[j])
+            j += 1
+
+        for idx, val in enumerate(merged):
+            lst[left + idx] = val
+
+            try:
+                winsound.Beep(100 + val * 10, 20)
+            except:
+                pass
+
+            draw_callback(lst, {left + idx: (0, 255, 0)})
+            pygame.time.wait(1000 // settings["speed"])
+            yield True
+
+    def merge_sort_recursive(left, right):
+        if left < right:
+            mid = (left + right) // 2
+            yield from merge_sort_recursive(left, mid)
+            yield from merge_sort_recursive(mid + 1, right)
+            yield from merge(left, mid, right)
+
+    yield from merge_sort_recursive(0, len(lst) - 1)
+
