@@ -20,29 +20,29 @@ def draw_list(lst, color_positions=None):
 
 
 def draw_text_info(algorithm_name, settings, duration=None):
-    font = pygame.font.SysFont('consolas', 20)
+    font = pygame.font.SysFont('timesnewroman', 24)
+    large_font = pygame.font.SysFont('timesnewroman', 26)
 
-    title = font.render(algorithm_name, True, (255, 255, 255))
+    title = large_font.render(algorithm_name, True, (255, 255, 255))
     WIN.blit(title, ((WIDTH - title.get_width()) // 2, 10))
 
     controls1 = font.render(
         "R - Reset | A - Asc | D - Desc | SPACE - Start | T - Theme | + / - Speed | O - Replay last list",
         True, (180, 180, 180)
     )
-    WIN.blit(controls1, ((WIDTH - controls1.get_width()) // 2, 35))
+    WIN.blit(controls1, ((WIDTH - controls1.get_width()) // 2, 50))
 
     controls2 = font.render(
         "I - Insertion | B - Bubble | S - Selection | Q - Quick | M - Merge | H - Heap",
         True, (180, 180, 180)
     )
-    WIN.blit(controls2, ((WIDTH - controls2.get_width()) // 2, 60))
+    WIN.blit(controls2, ((WIDTH - controls2.get_width()) // 2, 80))
 
     speed_display = font.render(f"Speed: {settings['speed']} FPS", True, (255, 255, 255))
-    WIN.blit(speed_display, (20, 85))
-
+    WIN.blit(speed_display, (20, 110))
 
     if duration is not None:
         label = "Sorting" if isinstance(duration, float) and duration < 60 else "Sorting completed in"
         timer_text = font.render(f"{label}: {duration:.2f} seconds", True, (255, 255, 255))
-        WIN.blit(timer_text, ((WIDTH - timer_text.get_width()) // 2, 110))
+        WIN.blit(timer_text, ((WIDTH - timer_text.get_width()) // 2, 135))
         
