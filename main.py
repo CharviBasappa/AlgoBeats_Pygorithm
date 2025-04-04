@@ -31,9 +31,9 @@ while run:
     # Live timer vs completed timer
     if sorting and sort_start_time:
         current_time = time.time() - sort_start_time
-        draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", current_time)
+        draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", visual_settings, current_time)
     else:
-        draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", sort_duration)
+        draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", visual_settings, sort_duration)
 
     
     pygame.display.update()
