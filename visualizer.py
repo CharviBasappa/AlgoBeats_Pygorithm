@@ -37,15 +37,12 @@ def draw_text_info(algorithm_name, settings, duration=None):
     )
     WIN.blit(controls2, ((WIDTH - controls2.get_width()) // 2, 60))
 
-    # ✅ Live speed display
     speed_display = font.render(f"Speed: {settings['speed']} FPS", True, (255, 255, 255))
-    # WIN.blit(speed_display, (WIDTH - 160, HEIGHT - 30))
-    WIN.blit(speed_display, (20, 100))
+    WIN.blit(speed_display, (20, 85))
 
 
     if duration is not None:
         label = "Sorting" if isinstance(duration, float) and duration < 60 else "Sorting completed in"
-        timer_font = pygame.font.SysFont('consolas', 18)
-        timer_text = timer_font.render(f"{label}: {duration:.2f} seconds", True, (255, 255, 255))
-        WIN.blit(timer_text, ((WIDTH - timer_text.get_width()) // 2, 85))
+        timer_text = font.render(f"{label}: {duration:.2f} seconds", True, (255, 255, 255))
+        WIN.blit(timer_text, ((WIDTH - timer_text.get_width()) // 2, 110))
         

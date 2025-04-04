@@ -28,7 +28,6 @@ while run:
     clock.tick(visual_settings["speed"])
 
     draw_list(lst)
-    # Live timer vs completed timer
     if sorting and sort_start_time:
         current_time = time.time() - sort_start_time
         draw_text_info(f"{current_algo_name} - {'ASC' if ascending else 'DESC'}", visual_settings, current_time)
