@@ -10,7 +10,7 @@ A visually rich Python application using **Pygame** to animate and compare popul
   - Bubble, Insertion, Selection, Merge, Quick, Heap
 - 🔼🔽 **Ascending / Descending Toggle**
 - 🎨 **Theme Toggle** (`T` key) with colorful gradient bars
-- ⏱️ **Live Timer** during sorting + total runtime
+- ⏱️ **Live Timer** during sorting
 - ⌨️ **Keyboard Shortcuts** for control
 - 🎚️ **Speed Control** (`+ / -`)
 
