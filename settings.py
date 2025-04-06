@@ -1,12 +1,5 @@
 import pygame
 
-# BAR_GRADIENTS = [
-#     (180, 205, 255),
-#     (130, 180, 255),
-#     (80, 150, 255)
-# ]
-# BG_COLOR = (0, 0, 0)
-
 THEMES = [
     {
         "BACKGROUND_COLOR": (20, 20, 30),
@@ -26,12 +19,10 @@ THEMES = [
     },
 ]
 
-
-# Default
 THEME_INDEX = 0
 CURRENT_THEME = THEMES[THEME_INDEX]
 
 WIDTH, HEIGHT = 1200, 700
 pygame.init()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Sorting Algorithm Visualizer")
+pygame.display.set_caption("Algorithms Visualizer")
